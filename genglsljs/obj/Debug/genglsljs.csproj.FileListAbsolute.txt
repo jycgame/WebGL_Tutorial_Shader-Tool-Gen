@@ -1,0 +1,12 @@
+F:\genglsljs\genglsljs\bin\Debug\genglsljs.exe.config
+F:\genglsljs\genglsljs\bin\Debug\genglsljs.exe
+F:\genglsljs\genglsljs\bin\Debug\genglsljs.pdb
+F:\genglsljs\genglsljs\bin\Debug\LitJSON.dll
+F:\genglsljs\genglsljs\obj\Debug\genglsljs.csprojAssemblyReference.cache
+F:\genglsljs\genglsljs\obj\Debug\genglsljs.Form1.resources
+F:\genglsljs\genglsljs\obj\Debug\genglsljs.Properties.Resources.resources
+F:\genglsljs\genglsljs\obj\Debug\genglsljs.csproj.GenerateResource.cache
+F:\genglsljs\genglsljs\obj\Debug\genglsljs.csproj.CoreCompileInputs.cache
+F:\genglsljs\genglsljs\obj\Debug\genglsljs.csproj.CopyComplete
+F:\genglsljs\genglsljs\obj\Debug\genglsljs.exe
+F:\genglsljs\genglsljs\obj\Debug\genglsljs.pdb
