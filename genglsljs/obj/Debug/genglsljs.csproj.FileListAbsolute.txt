@@ -10,3 +10,15 @@ F:\genglsljs\genglsljs\obj\Debug\genglsljs.csproj.CoreCompileInputs.cache
 F:\genglsljs\genglsljs\obj\Debug\genglsljs.csproj.CopyComplete
 F:\genglsljs\genglsljs\obj\Debug\genglsljs.exe
 F:\genglsljs\genglsljs\obj\Debug\genglsljs.pdb
+C:\Users\HanIT\Desktop\WebGL_Tutorial_Shader-Tool-Gen\genglsljs\bin\Debug\genglsljs.exe.config
+C:\Users\HanIT\Desktop\WebGL_Tutorial_Shader-Tool-Gen\genglsljs\bin\Debug\genglsljs.exe
+C:\Users\HanIT\Desktop\WebGL_Tutorial_Shader-Tool-Gen\genglsljs\bin\Debug\genglsljs.pdb
+C:\Users\HanIT\Desktop\WebGL_Tutorial_Shader-Tool-Gen\genglsljs\bin\Debug\LitJSON.dll
+C:\Users\HanIT\Desktop\WebGL_Tutorial_Shader-Tool-Gen\genglsljs\obj\Debug\genglsljs.csprojAssemblyReference.cache
+C:\Users\HanIT\Desktop\WebGL_Tutorial_Shader-Tool-Gen\genglsljs\obj\Debug\genglsljs.Form1.resources
+C:\Users\HanIT\Desktop\WebGL_Tutorial_Shader-Tool-Gen\genglsljs\obj\Debug\genglsljs.Properties.Resources.resources
+C:\Users\HanIT\Desktop\WebGL_Tutorial_Shader-Tool-Gen\genglsljs\obj\Debug\genglsljs.csproj.GenerateResource.cache
+C:\Users\HanIT\Desktop\WebGL_Tutorial_Shader-Tool-Gen\genglsljs\obj\Debug\genglsljs.csproj.CoreCompileInputs.cache
+C:\Users\HanIT\Desktop\WebGL_Tutorial_Shader-Tool-Gen\genglsljs\obj\Debug\genglsljs.csproj.CopyComplete
+C:\Users\HanIT\Desktop\WebGL_Tutorial_Shader-Tool-Gen\genglsljs\obj\Debug\genglsljs.exe
+C:\Users\HanIT\Desktop\WebGL_Tutorial_Shader-Tool-Gen\genglsljs\obj\Debug\genglsljs.pdb

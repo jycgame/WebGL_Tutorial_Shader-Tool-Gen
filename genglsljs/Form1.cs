@@ -15,6 +15,7 @@ namespace genglsljs
     public partial class Form1 : Form
     {
         private readonly string configFile = "config.txt";
+        private string rootFolder;
 
         public Form1()
         {
@@ -104,6 +105,7 @@ namespace genglsljs
                 return;
             }
 
+            rootFolder = folder.Replace("\\", "/");
             ProcessFiles(folder);
 
             toolStripStatusLabel1.Text = "处理完毕";
@@ -111,6 +113,8 @@ namespace genglsljs
 
         private void ProcessFiles(string folder)
         {
+            List<string> collections = new List<string>();
+
             // files
             string[] files = Directory.GetFiles(folder);
             for (int i = 0; i < files.Length; ++i)
@@ -121,7 +125,18 @@ namespace genglsljs
 
                 string folderPath = Path.GetDirectoryName(files[i]);
                 string fileName = Path.GetFileNameWithoutExtension(files[i]);
-                string outputFilePath = Path.Combine(folderPath, fileName);
+                string outputFilePath = Path.Combine(folderPath, fileName).Replace("\\", "/");
+
+                // collection for shaderCollection.js
+                string nameBaseOnRoot = outputFilePath.Substring(rootFolder.Length, outputFilePath.Length - rootFolder.Length);
+                string collectName;
+                if (!nameBaseOnRoot.Substring(0, 1).Equals("/"))
+                    collectName = "./" + nameBaseOnRoot;
+                else
+                    collectName = "." + nameBaseOnRoot;
+                collections.Add(collectName);
+
+                // javascript file
                 outputFilePath += ".js";
 
                 string[] lines = File.ReadAllLines(files[i]);
@@ -156,6 +171,58 @@ namespace genglsljs
             {
                 ProcessFiles(folders[i]);
             }
+
+            GenerateShaderCollection(collections);
+        }
+
+        private void GenerateShaderCollection(List<string> collections)
+        {
+            // create shaderCollection.js
+            StreamWriter shaderCollectionFile = File.CreateText(Path.Combine(rootFolder, "shaderCollection.js"));
+
+            shaderCollectionFile.WriteLine("define([");
+
+            for (int i = 0; i < collections.Count; ++i)
+            {
+                shaderCollectionFile.WriteLine("\t'" + collections[i] + "',");
+            }
+
+            shaderCollectionFile.WriteLine("\t], function(");
+
+            for (int i = 0; i < collections.Count; ++i)
+            {
+                int pos = collections[i].LastIndexOf('/');
+                string name = collections[i].Substring(pos + 1, collections[i].Length - pos - 1);
+                shaderCollectionFile.WriteLine("\t" + name + ",");
+            }
+
+            shaderCollectionFile.WriteLine("\t){");
+            shaderCollectionFile.WriteLine();
+
+            shaderCollectionFile.WriteLine("\tvar collection = [];");
+            shaderCollectionFile.WriteLine();
+
+            for (int i = 0; i < collections.Count; ++i)
+            {
+                int pos = collections[i].LastIndexOf('/');
+                string name = collections[i].Substring(pos + 1, collections[i].Length - pos - 1);
+
+                string line = "collection['";
+                line += name;
+                line += "'] = ";
+                line += name;
+                line += ";";
+
+                shaderCollectionFile.WriteLine("\t" + line);
+            }
+
+            shaderCollectionFile.WriteLine();
+
+            shaderCollectionFile.WriteLine("\treturn collection;");
+            shaderCollectionFile.WriteLine("});");
+
+            shaderCollectionFile.Flush();
+            shaderCollectionFile.Close();
         }
 
     }
